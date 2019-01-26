@@ -7,7 +7,7 @@ const Users = require('../models/Users');
 let githubOAuth = require('github-oauth')({
     githubClient: '00f44571b40a51de0e6d',
     githubSecret: process.env.SECRET,
-    baseURL: 'http://127.0.0.1:3000',
+    baseURL: 'https://hackmate.tech',
     loginURI: '/auth',
     callbackURI: '/auth/github/callback',
     scope: 'user' // optional, default scope is set to user
