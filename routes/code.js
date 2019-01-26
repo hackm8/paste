@@ -9,7 +9,7 @@ router.get('/c/:id', async (req, res) => {
             let { code, views } = post;
             post.views++;
             post.save(() => {
-                res.render('index', { username: post.user, value: code, views: views, id: id, isLogged: req.isLogged });
+                res.render('index', { title: `Code by ${post.user}`, desc: code.substring(0, 100), username: post.user, value: code, views: views, id: id, isLogged: req.isLogged });
             })
         } else {
             res.redirect('/');
