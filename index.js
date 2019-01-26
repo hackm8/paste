@@ -45,7 +45,7 @@ app.use(async (req, res, next) => {
 			} else {
 				res.clearCookie('username');
 				res.clearCookie('_uid');
-				req.isLogged = true;
+				req.isLogged = false;
 				next();
 			}
 		})
