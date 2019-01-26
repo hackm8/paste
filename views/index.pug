@@ -11,13 +11,26 @@ block content
                 .ui.black.button
                     i.fa.fa-eye
                     |  Views
-                a.ui.basic.black.left.pointing.label 2M
-                
+                a.ui.basic.black.left.pointing.label=views
+        if link
+            .ui.icon.message
+                i.inbox.icon
+                .content
+                    .header Your code uploaded
+                    p Share #{link}
         form.ui.form(action='/upload', method='post')
             .field
                 if !value
                     label Your Code/Text
-                textarea(style='resize: none; margin-top: 0.8em;' rows='20' name='code')=value
+                textarea(style='resize: none; margin-top: 0.8em;' rows='20' name='code' readonly=value)=value
             if !value
                 button.ui.button Submit
+            else
+                button.ui.button.green
+                    i.fa.fa-share
+                    |  Share
+                
+                button.ui.button.red
+                    i.fa.fa-exclamation-circle 
+                    |  Abusive Content
             
