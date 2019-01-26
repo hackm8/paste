@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         Posts.create({
             id: id,
             code: code,
-            user: req.cookies.username
+            user: req.cookies.username || 'Anonymous'
         }).then(() => {
             res.redirect('/c/' + id)
         });

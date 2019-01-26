@@ -9,7 +9,7 @@ router.get('/c/:id', async (req, res) => {
             let { code, views } = post;
             post.views++;
             post.save(() => {
-                res.render('index', { value: code, views: views, id: id, isLogged: req.isLogged });
+                res.render('index', { username: req.cookies.username, value: code, views: views, id: id, isLogged: req.isLogged });
             })
         } else {
             res.redirect('/');

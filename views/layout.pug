@@ -9,6 +9,7 @@ head
     meta(property='og:image', content='https://i.ibb.co/Njz3p1q/hacmate.png')
     meta(property='og:site_name', content='HackMate.tech')
     meta(property='og:type', content='website')
+    block head
 
 .ui.secondary.menu.pointing
   a.active.item Home
@@ -21,4 +22,8 @@ head
       a.ui.item(href='javascript:alert("Coming Soon")') Profile
         
 body
-    block content
+  if !isLogged
+    .ui.message
+      .header Login to save your codes
+      p It's recommended to login before uploading any code, doing this will save the code in your account.
+  block content
