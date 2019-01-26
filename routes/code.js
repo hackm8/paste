@@ -16,7 +16,20 @@ router.get('/c/:id', async (req, res) => {
         res.render('index', {value: code, views: views});
     } catch(e) {
         res.redirect('/');
-    }
-    
+    }    
 });
+
+router.get('/raw/:id', async (req, res) => {
+    const adapter = new FileSync('database.json');
+    const db = low(adapter);
+    let id = req.params.id;
+    try {
+        let { code } = db.get('posts').find({ id: id  }).value();
+        res.end(code);
+    } catch(e) {
+        res.redirect('/');
+    }    
+});
+
+
 module.exports = router;
