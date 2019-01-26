@@ -20,9 +20,14 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "express-seo": "0.0.1",
     "express-session": "^1.15.6",
+    "github-oauth": "^0.2.2",
     "lowdb": "^1.0.0",
+    "mongoose": "^5.4.6",
+    "mongoose-sequence": "^4.0.1",
     "pug": "^2.0.3",
+    "request": "^2.88.0",
     "shortid": "^2.2.14"
   }
 }

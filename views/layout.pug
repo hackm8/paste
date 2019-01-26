@@ -15,6 +15,10 @@ head
   a.item Top
   a.item Bookmark
   .right.menu
-    a.ui.item Login
+    if(!isLogged)
+      a.ui.item(href='/auth') Login
+    else
+      a.ui.item(href='javascript:alert("Coming Soon")') Profile
+        
 body
     block content
