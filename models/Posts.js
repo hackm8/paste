@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
-const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Schema = new mongoose.Schema({
+    id: { type: String, required: true },
     code: { type: String, required: true },
-    userid: String,
-    views: String
+    user: { type: String, required: true },
+    views: { type: Number, default: 1 }
 });
-
-Schema.plugin(AutoIncrement, { inc_field: 'id' });
 
 module.exports = mongoose.model('Posts', Schema);
