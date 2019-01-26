@@ -13,7 +13,7 @@ router.get('/c/:id', async (req, res) => {
     try {
         let { code, views } = db.get('posts').find({ id: id  }).value();
         db.get('posts').find({id: id}).assign({views: views + 1 || 1}).write();
-        res.render('index', {value: code, views: views});
+        res.render('index', {value: code, views: views, id: id});
     } catch(e) {
         res.redirect('/');
     }    
