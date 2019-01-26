@@ -55,6 +55,7 @@ app.use(async (req, res, next) => {
 app.use('/upload', require('./routes/upload'));
 app.use('/', require('./routes/code'));
 app.use('/auth', require('./routes/auth'));
+app.use('/abuse', require('./routes/abuse'));
 
 
 app.get('/', async (req, res) => {
