@@ -3,6 +3,7 @@ head
     link(href='/css/semantic.min.css', rel='stylesheet')
     //- script(src='https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css')
     meta(name='viewport', content='width=device-width,initial-scale=1.0')
     meta(property='og:title', content=title || 'Paste | HackMate™')
     meta(property='og:description', content= desc || 'Code uploader at HackMate 💻')
@@ -13,8 +14,8 @@ head
 
 .ui.secondary.menu.pointing
   a.active.item Home
-  a.item Top
-  a.item Bookmark
+  a.item(href='/saved') Saved
+  a.item(href='/collab') Collaborate
   .right.menu
     if(!isLogged)
       a.ui.item(href='/auth') Login

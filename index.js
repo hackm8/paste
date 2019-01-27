@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -57,8 +58,17 @@ app.use('/', require('./routes/code'));
 app.use('/auth', require('./routes/auth'));
 app.use('/abuse', require('./routes/abuse'));
 
+const Posts = require('./models/Posts');
 
 app.get('/', async (req, res) => {
+	if (req.isLogged) {
+		return Posts.find({ user: req.cookies.username }).then(posts => {
+			res.render('index', {
+				isLogged: req.isLogged,
+				posts: posts
+			});
+		})
+	}
 	res.render('index', {
 		isLogged: req.isLogged
 	});

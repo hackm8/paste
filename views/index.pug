@@ -12,8 +12,11 @@ block content
                 textarea(id='textarea' name='code')=value || 'print("hi")'
             if !value
                 button.ui.button Submit
+
             else
                 div(style='margin-bottom: 1em')
+                    .ui.label
+                        i(class='devicon-'+lang+'-plain')
                     .ui.label
                         i.fa.fa-eye &nbsp;#{views}
                     .ui.label
@@ -23,7 +26,7 @@ block content
                     |  Raw
                 a.ui.label.red(href='/abuse/'+id)
                     i.fa.fa-exclamation-circle 
-                    |  Abusive Content            
+                    |  Abusive Content
     script.
         const textarea = document.getElementById('textarea')
         var editor = CodeMirror.fromTextArea(textarea, {
